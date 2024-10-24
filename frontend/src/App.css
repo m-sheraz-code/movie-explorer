@@ -1,14 +1,14 @@
 :root {
   --font-family: 'montserrat', sans-serif;
-  --color-primary: #ff385c;
+  --color-primary: #E50910;
   --color-black: #000;
   --color-white: #fff;
   --color-light-gray: #f7f7f7;
   --color-gray: #777;
   --color-dark-gray: rgba(0, 0, 0, 0.7);
   --color-border: #ddd;
-  --color-shadow: rgba(0, 0, 0, 0.1);
-  --color-hover-bg: #e8325b;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-hover-bg: #E50910;
   --border-radius: 5px;
   --transition: 0.3s;
   --shadow-1: 0px 4px 10px var(--color-shadow);
@@ -24,4 +24,205 @@
 html,body {
   font-family: var(--font-family);
   overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.logo img {
+  height: 120px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: var(--color-black);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.nav-links a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.active-link {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* SEARCH BAR */
+.search-main {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-light-gray);
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid var(--color-border);
+}
+
+.search-bar input {
+  border: none;
+  background-color: transparent;
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  background-color: var(--color-primary);
+  border: none;
+  padding: 10px 12px;
+  border-radius: 50%;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.search-btn:hover {
+  background-color: var(--color-hover-bg);
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-black);
+  text-align: center;
+  padding: 0px;
+  padding-top: 20px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid var(--color-border);
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #E50910;
+  width: 30%;
+}
+
+.footer-logo img {
+  height: 200px;
+  width: 200px;
+}
+
+.copyright {
+  color: var(--color-white);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 14px;
+  background-color: var(--color-primary);
+}
+
+
+.main-heading{
+  padding: 20px;
+  padding-top: 30px;
+}
+
+/* LISTING CARDS AREA */
+.total-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 50px 20px;
+  padding-top: 30px;
+}
+
+.listing-card {
+  background-color: var(--color-white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.listing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-2);
+}
+
+.image-container {
+  position: relative;
+}
+
+.listing-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.live-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: var(--border-radius);
+}
+
+.listing-info {
+  padding: 15px;
+}
+
+.listing-info .price-section {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 5px;
+}
+
+.listing-info .price-section span {
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.listing-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.listing-info p {
+  font-size: 14px;
+  color: var(--color-gray);
+  margin-bottom: 5px;
+}
+
+.listing-info p.hosted-by {
+  font-weight: bold;
+  color: var(--color-black);
 }
